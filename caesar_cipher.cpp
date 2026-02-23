@@ -5,10 +5,12 @@ string encrypt(string s) {
     for(char c : s) {
         if(c >= 'A' && c <= 'Z') {
             char x = ( (c - 'A') + 3 ) % 26 + 'A';
+            cout<<c<<"->"<<x<<endl;
             res += x;
         }
         else if(c >= 'a' && c <= 'z') {
             char x = ( (c - 'a') + 3 ) % 26 + 'a';
+            cout<<c<<"->"<<x<<endl;
             res += x;
         }
         else {
@@ -22,10 +24,12 @@ string decrypt(string s) {
     for(char c : s) {
         if(c >= 'A' && c <= 'Z') {
             char x = ( (c - 'A') - 3 + 26 ) % 26 + 'A';
+            cout<<c<<"->"<<x<<endl;
             res += x;
         }
         else if(c >= 'a' && c <= 'z') {
             char x = ( (c - 'a') - 3 + 26 ) % 26 + 'a';
+            cout<<c<<"->"<<x<<endl;
             res += x;
         }
         else {
@@ -40,8 +44,8 @@ int main() {
     getline(cin, s);
     // cin >> k;
     string enc = encrypt(s);
-    string dec = decrypt(enc);
     cout << "Encrypted: " << enc << endl;
+    string dec = decrypt(enc);
     cout << "Decrypted: " << dec << endl;
     return 0;
 }
